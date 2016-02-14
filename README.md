@@ -1,2 +1,2 @@
 # npmjs-analytics
-Analytics on npmjs profile
+Profile Analytics for npmjs.com
