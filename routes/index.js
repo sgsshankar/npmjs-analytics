@@ -21,36 +21,47 @@ router.get('/', function(req, res, next) {
 /* GET details */
 router.get('/details/:username', function(req, res, next) {
 	var username = req.params.username;
-	var pdetails = {}
-	getProfileDetails(username).then(function(profile) {
-		pdetails.author = profile.author;
-		pdetails.authorImg = profile.authorImg;
-		pdetails.fullName = profile.fullName;
-		pdetails.links = profile.links;
-		pdetails.links.email = new Buffer((profile.links.email).replace(new RegExp("%", 'g'), ''), 'hex').toString("ascii");
-		packages = profile.content.packages;
-		pdetails.totalPackages = packages.length;
-		for (var i in packages) {
-			pkage = trim(packages[i]).split('\n')[0];
-			var pkage = getPackageDetails(pkage).then(function(pkagedetails) {
-				var plished = trim(pkagedetails.published).split('\n')[4];
-				var pd = {
-					packageName: pkagedetails.packageName,
-					published: plished,
-					stats: pkagedetails.stats
-				}
-			})
-		}
+	getDetails(username).then(function(result) {
+		res.send(result);
 	})
-	res.render('index', {
-		title: 'Profile details for npmjs.com'
-	});
 });
 
 module.exports = router;
 
 
 /* functions starts */
+
+function getDetails(username) {
+	var pdetails = {}
+	pdetails.packages = []
+	return new Promise(function(resolve, reject) {
+		getProfileDetails(username).then(function(profile) {
+			pdetails.author = profile.author;
+			pdetails.authorImg = profile.authorImg;
+			pdetails.fullName = profile.fullName;
+			pdetails.links = profile.links;
+			pdetails.links.email = new Buffer((profile.links.email).replace(new RegExp("%", 'g'), ''), 'hex').toString("ascii");
+			packages = profile.content.packages;
+			pdetails.totalPackages = packages.length;
+			for (var i in packages) {
+				console.log(i)
+				pkage = trim(packages[i]).split('\n')[0];
+				getPackageDetails(pkage).then(function(pkagedetails) {
+					var plished = trim(pkagedetails.published).split('\n')[4];
+					var pd = {
+						packageName: pkagedetails.packageName,
+						published: plished,
+						stats: pkagedetails.stats
+					}
+					pdetails.packages.push(pd);
+					resolve(pdetails)
+				})
+			}
+		})
+
+	})
+}
+
 function getProfileDetails(username) {
 	return new Promise(function(resolve, reject) {
 		url = base + '/~' + username;
