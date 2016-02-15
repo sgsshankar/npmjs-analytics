@@ -44,17 +44,18 @@ function getDetails(username) {
 			packages = profile.content.packages;
 			pdetails.totalPackages = packages.length;
 			for (var i in packages) {
-					(function(i){
+				(function(i) {
 					pkage = trim(packages[i]).split('\n')[0];
 					getPackageDetails(pkage).then(function(pkagedetails) {
 						var plished = trim(pkagedetails.published).split('\n')[4];
 						var pd = {
 							packageName: pkagedetails.packageName,
 							published: trim(plished),
-							stats: pkagedetails.stats
+							stats: pkagedetails.stats,
+							collaborators: pkagedetails.collaborators
 						}
 						pdetails.packages.push(pd);
-						if(i==4){
+						if (i == (pdetails.totalPackages - 1)) {
 							resolve(pdetails)
 						}
 					})
@@ -102,15 +103,14 @@ function getPackageDetails(packagename) {
 				weekly: '.weekly-downloads',
 				monthly: '.monthly-downloads'
 			},
-			items: x('.collaborators', [{
-		 	name: '.collaborators img@alt',
-	 		}])
+			collaborators: x('.collaborators li', [{
+				author: 'a img@alt',
+			}])
 		})(function(err, obj) {
 			if (err) {
 				reject(err)
 			} else {
 				packages = obj;
-				console.log(obj);
 				packages.packageName = packagename
 				resolve(packages)
 			}
