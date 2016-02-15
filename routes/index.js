@@ -101,12 +101,16 @@ function getPackageDetails(packagename) {
 				daily: '.daily-downloads',
 				weekly: '.weekly-downloads',
 				monthly: '.monthly-downloads'
-			}
+			},
+			items: x('.collaborators', [{
+		 	name: '.collaborators img@alt',
+	 		}])
 		})(function(err, obj) {
 			if (err) {
 				reject(err)
 			} else {
-				packages = obj
+				packages = obj;
+				console.log(obj);
 				packages.packageName = packagename
 				resolve(packages)
 			}
