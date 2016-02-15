@@ -44,18 +44,21 @@ function getDetails(username) {
 			packages = profile.content.packages;
 			pdetails.totalPackages = packages.length;
 			for (var i in packages) {
-				console.log(i)
-				pkage = trim(packages[i]).split('\n')[0];
-				getPackageDetails(pkage).then(function(pkagedetails) {
-					var plished = trim(pkagedetails.published).split('\n')[4];
-					var pd = {
-						packageName: pkagedetails.packageName,
-						published: plished,
-						stats: pkagedetails.stats
-					}
-					pdetails.packages.push(pd);
-					resolve(pdetails)
-				})
+					(function(i){
+					pkage = trim(packages[i]).split('\n')[0];
+					getPackageDetails(pkage).then(function(pkagedetails) {
+						var plished = trim(pkagedetails.published).split('\n')[4];
+						var pd = {
+							packageName: pkagedetails.packageName,
+							published: trim(plished),
+							stats: pkagedetails.stats
+						}
+						pdetails.packages.push(pd);
+						if(i==4){
+							resolve(pdetails)
+						}
+					})
+				})(i)
 			}
 		})
 
