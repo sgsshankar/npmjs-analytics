@@ -1,0 +1,29 @@
+{
+  "name": "npmjs-analytics",
+  "description": "Profile Analytics for npmjs.com developers",
+  "main": "app.js",
+  "authors": [
+    "sgsshankar",
+    "divakarvenu"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "npmjs",
+    "analytics"
+  ],
+  "homepage": "https://github.com/sgsshankar/npmjs-analytics",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
