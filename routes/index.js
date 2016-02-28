@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET details */
-router.get('/details/:username', function(req, res, next) {
+router.get('/profile/:username', function(req, res, next) {
 	var username = req.params.username;
 	scraper.getDetails(username).then(function(result) {
 		res.send(result);
