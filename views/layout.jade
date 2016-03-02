@@ -1,7 +1,15 @@
 doctype html
-html
+html(lang='en')
   head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-compatible' content="IE=edge")
+    meta(name='viewport' content='width=device-width initial-scale=1.0')
+    meta(name='description' content='Profile Analytics for npmjs.org')
     title= title
+    link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/jquery/dist/jquery.min.js")
+    script(src='/bootstrap/dist/js/bootstrap.min.js')
+    script(src="/javascripts/index.js")
   body
     block content

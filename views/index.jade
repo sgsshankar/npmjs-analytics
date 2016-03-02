@@ -1,5 +1,32 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	#header
+		.navbar.navbar-default.navbar-fixed-top(role='navigation')
+			.container-fluid
+				.navbar-header
+					a.navbar-brand Profile Analyser for npmjs.com
+				p.navbar-text.navbar-right
+					a.navbar-link(href='#{profile_url}') #{profile_name}
+
+	#main
+		.container-fluid
+			.row.row-centered 
+				.col-lg-10.col-centered
+					.input-group
+						input#search.form-control(type='text', placeholder='Profile name..')
+						span.input-group-btn
+							button#searchbtn.btn.btn-default(type='button') Go!
+
+		.container-fluid.main-content
+			.row
+				.col-md-4
+					img(src='#{profile_pic}', class='img-responsive profile-pic', width='342px', height='342px')
+
+
+	#footer
+		nav.navbar.navbar-default.navbar-fixed-bottom
+			.container-fluid
+				p.navbar-text.navbar-left
+					| Place sticky footer content here
+	
