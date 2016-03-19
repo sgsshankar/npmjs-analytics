@@ -26,4 +26,14 @@ a {
 
 .main-content {
 	margin-top: 10px;
+	visibility: hidden;
+}
+
+.show-things {
+	visibility: visible;
+}
+
+.author-info {
+	border-style: dashed;
+	padding: 10px;
 }

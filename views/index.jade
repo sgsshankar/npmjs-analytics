@@ -14,15 +14,33 @@ block content
 			.row.row-centered 
 				.col-lg-10.col-centered
 					.input-group
-						input#search.form-control(type='text', placeholder='Profile name..')
+						input#search.form-control(type='text', placeholder='Profile name..', value = "", autofocus='autofocus')
 						span.input-group-btn
 							button#searchbtn.btn.btn-default(type='button') Go!
 
 		.container-fluid.main-content
 			.row
 				.col-md-4
-					img(src='#{profile_pic}', class='img-responsive profile-pic', width='342px', height='342px')
-
+					img(src='#', class='img-responsive profile-pic', width='342px', height='342px', alt='profile-pic')
+				.col-md-4.author-info
+					span
+						span.glyphicon.glyphicon-user
+						p.fullname
+						span.glyphiconglyphicon-envelope
+						p
+							a.email(href='#')
+						span.glyphicon.glyphicon-home
+						p
+							a.homepage(href='#')
+						span.glyphicon.glyphicon-star
+						p
+							a.github(href='#')
+						span.glyphicon.glyphicon-tree-conifer
+						p
+							a.twitter(href='#')
+						span.glyphicon.glyphicon-globe
+						p
+							a.freenode(href='#')		
 
 	#footer
 		nav.navbar.navbar-default.navbar-fixed-bottom
