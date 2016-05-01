@@ -22,10 +22,10 @@ router.get('/test', function(req, res, next) {
 
 /* GET details */
 router.get('/profile', function(req, res, next) {
-	var username = req.query.profile;
-	scraper.getDetails(username).then(function(result) {
+		var username = req.query.username;
+	  scraper.getDetails(username).then(function(result) {
 		res.send(result);
-	})
+	 })
 });
 
 module.exports = router;

@@ -1,0 +1,27 @@
+<div id="main">
+  <div class="container-fluid">
+    <div class="row row-centered">
+      <div class="col-lg-10 col-centered">
+        <div class="input-group">
+          <input id="search" type="text" ng-model="userQuery" placeholder="Profile name.." value="userQuery" autofocus="autofocus" class="form-control"/><span class="input-group-btn">
+            <button id="searchbtn" type="button" class="btn btn-default" ng-click="getUserInformation(userQuery)">Go!</button></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br></br>
+
+  <div class="container-fluid main-content" ng-class="displayToggle()">
+    <div class="row">
+      <div class="col-md-4"><img ng-src="{{profile.authorImg}}" width="342px" height="342px" alt="profile-pic" class="img-responsive profile-pic"/></div>
+      <div class="col-md-4 author-info"><span><span class="glyphicon glyphicon-user"></span>
+          <p class="fullname">{{profile.fullName}}</p><span class="glyphiconglyphicon-envelope"></span>
+          <p><a href="#" class="email">{{profile.links.email}}</a></p><span class="glyphicon glyphicon-home"></span>
+          <p><a href="#" class="homepage">{{profile.links.homepage}}</a></p><span class="glyphicon glyphicon-star"></span>
+          <p><a href="#" class="github">{{profile.links.github}}</a></p><span class="glyphicon glyphicon-tree-conifer"></span>
+          <p><a href="#" class="twitter">{{profile.links.twitter}}</a></p><span class="glyphicon glyphicon-globe"></span>
+          <p><a href="#" class="freenode">{{profile.links.freenode}}</a></p></span></div>
+    </div>
+  </div>
+  </div>
