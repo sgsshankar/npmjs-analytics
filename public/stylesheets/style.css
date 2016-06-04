@@ -2,14 +2,64 @@ body {
 	height: 100%;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+.navbar{
+	    background-color: #212121 !important;
+}
+.navbar-brand{
+ 	 color:#ffffff !important;
+}
 
 a {
 	color: #00B7FF;
 }
-
+.searchbox{
+	margin: 0 auto;
+	margin-top: 25%;
+	padding: 10px;
+	width: 70%;
+}
+#searchbtn{
+	background-color:#212121 !important;
+	color: white;
+}
+.kpiprofile{
+	margin: 10px !important;
+	border-radius: 100px !important;
+}
+.kpiprofile img{
+	  width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+.chart{
+	display:none;
+	margin-top: 50px;
+	-webkit-box-shadow: 6px 2px 5px 0px rgba(30, 48, 37, 0.12);
+	-moz-box-shadow:    6px 2px 5px 0px rgba(30, 48, 37, 0.12);
+	box-shadow:         6px 2px 5px 0px rgba(30, 48, 37, 0.12);
+}
+.kpi{
+		height: 100px;
+    /*border: 1px solid black;*/
+    text-align: center;
+		-webkit-box-shadow: 6px 2px 5px 0px rgba(30, 48, 37, 0.12);
+	  -moz-box-shadow:    6px 2px 5px 0px rgba(30, 48, 37, 0.12);
+  	box-shadow:         6px 2px 5px 0px rgba(30, 48, 37, 0.12);
+		    word-wrap: break-word;
+}
+.kpiinfo{
+	float: right;
+	text-align: start;
+	width: 50%;
+}
+.kpiicon{
+	float: left;
+	width: 30%;
+	height: 100%;
+	font-size: 85px;
+}
 #main {
-	max-height: calc(100% - 120px);
-	padding: 0px 10% !important;
+
 	margin-top: 100px !important;
 }
 
@@ -26,11 +76,11 @@ a {
 
 .main-content {
 	margin-top: 10px;
-	visibility: hidden;
+	display:none;
 }
 
 .show-things {
-	visibility: visible;
+	display:block;
 }
 
 .author-info {

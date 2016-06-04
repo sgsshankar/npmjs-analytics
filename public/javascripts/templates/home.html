@@ -1,5 +1,7 @@
 <div id="main">
-  <div class="container-fluid">
+
+
+  <div class="container-fluid searchbox">
     <div class="row row-centered">
       <div class="col-lg-10 col-centered">
         <div class="input-group">
@@ -10,18 +12,107 @@
     </div>
   </div>
 
-  <br></br>
+    <div class="container-fluid main-content" ng-class="displayToggle()">
+        <div class="row">
+          <div class="col-md-12 col-md-offset-4">
+            <div class="col-md-4">
+              <div class="kpi kpiprofile">
+              <div class="kpicontent">
+                  <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+                  <img ng-src="{{profile.authorImg}}" ></img>
+              </div>
+            </div></div>
+                </div>
+            </div>
 
-  <div class="container-fluid main-content" ng-class="displayToggle()">
-    <div class="row">
-      <div class="col-md-4"><img ng-src="{{profile.authorImg}}" width="342px" height="342px" alt="profile-pic" class="img-responsive profile-pic"/></div>
-      <div class="col-md-4 author-info"><span><span class="glyphicon glyphicon-user"></span>
-          <p class="fullname">{{profile.fullName}}</p><span class="glyphiconglyphicon-envelope"></span>
-          <p><a href="#" class="email">{{profile.links.email}}</a></p><span class="glyphicon glyphicon-home"></span>
-          <p><a href="#" class="homepage">{{profile.links.homepage}}</a></p><span class="glyphicon glyphicon-star"></span>
-          <p><a href="#" class="github">{{profile.links.github}}</a></p><span class="glyphicon glyphicon-tree-conifer"></span>
-          <p><a href="#" class="twitter">{{profile.links.twitter}}</a></p><span class="glyphicon glyphicon-globe"></span>
-          <p><a href="#" class="freenode">{{profile.links.freenode}}</a></p></span></div>
-    </div>
-  </div>
-  </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="kpi">
+            <div class="kpicontent">
+                <div class="kpiicon">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="kpiinfo">
+                  <h3>Full Name</h3>
+                  <h4>{{profile.fullName}}</h4>
+                </div>
+            </div>
+          </div></div>
+          <div class="col-md-4">  <div class="kpi">
+            <div class="kpicontent">
+                <div class="kpiicon">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="kpiinfo">
+                  <h3>Email</h3>
+                  <h4>{{profile.links.email}}</h4>
+                </div>
+            </div>
+          </div></div>
+          <div class="col-md-4">  <div class="kpi">
+            <div class="kpicontent">
+                <div class="kpiicon">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                </div>
+                <div class="kpiinfo">
+                  <h3>Home Page</h3>
+                  <h4>{{profile.links.homepage}}</h4>
+                </div>
+            </div>
+          </div></div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">  <div class="kpi">
+            <div class="kpicontent">
+                <div class="kpiicon">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </div>
+                <div class="kpiinfo">
+                  <h3>Github</h3>
+                  <h4>{{profile.links.github}}</h4>
+                </div>
+            </div>
+          </div></div>
+          <div class="col-md-4">  <div class="kpi">
+            <div class="kpicontent">
+                <div class="kpiicon">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </div>
+                <div class="kpiinfo">
+                  <h3>Twitter</h3>
+                  <h4>{{profile.links.twitter}}</h4>
+                </div>
+            </div>
+          </div></div>
+          <div class="col-md-4">  <div class="kpi">
+            <div class="kpicontent">
+                <div class="kpiicon">
+                  <i class="fa fa-terminal" aria-hidden="true"></i>
+                </div>
+                <div class="kpiinfo">
+                  <h3>Freenode</h3>
+                  <h4>{{profile.links.freenode}}</h4>
+                </div>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="row">
+        <div class="text-center col-md-6">
+            <div class="chart">Widget 1</div>
+        </div>
+
+        <div class="text-center col-md-6">
+            <div class="chart">Widget 2</div>
+        </div>
+        </div>
+
+      </div>
+
+
+
+
+
+  <br></br>
